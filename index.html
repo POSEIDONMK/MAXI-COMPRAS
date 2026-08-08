@@ -67,6 +67,38 @@ p{margin:0}
 .tb-brand{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:800; color:var(--teal); font-size:1.05rem}
 .tb-brand svg{width:28px; height:28px}
 .topbar .btn-wa{padding:9px 16px; font-size:.85rem}
+.tb-right{display:flex; align-items:center; gap:9px}
+.tb-soc{width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--teal); border:1.5px solid var(--line); background:#fff; transition:all .2s}
+.tb-soc:hover{color:#fff; background:var(--teal); border-color:var(--teal); transform:translateY(-2px)}
+.tb-soc svg{width:18px; height:18px}
+.cat-block{display:none; margin-bottom:38px}
+.cat-block.show{display:block}
+.cb-head{text-align:center; max-width:660px; margin:0 auto 26px}
+.cb-eyebrow{font-weight:800; text-transform:uppercase; letter-spacing:.2em; font-size:.7rem; color:var(--gold); margin-bottom:10px}
+.cb-title{font-family:var(--display); font-weight:700; font-size:1.7rem; color:var(--teal-deep); letter-spacing:-.02em; margin-bottom:8px}
+.cb-title .g{color:var(--gold)}
+.cb-sub{color:var(--ink-soft); font-size:1rem}
+.cb-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.cb-card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; box-shadow:var(--shadow-sm); transition:transform .3s, box-shadow .3s}
+.cb-card:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
+.cb-ic{width:50px; height:50px; border-radius:14px; background:linear-gradient(145deg,var(--gold-2),var(--gold)); display:flex; align-items:center; justify-content:center; margin-bottom:16px; box-shadow:0 8px 18px -8px rgba(192,138,46,.6)}
+.cb-ic svg{width:25px; height:25px; color:#fff}
+.cb-card h4{font-family:var(--display); font-weight:700; font-size:1.14rem; color:var(--teal-deep); margin-bottom:7px}
+.cb-card p{color:var(--ink-soft); font-size:.9rem; line-height:1.55}
+.cat-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.cat-card{position:relative; overflow:hidden; text-align:left; cursor:pointer; background:var(--card); border:1px solid var(--line); border-top:4px solid var(--cc); border-radius:var(--r); padding:28px; box-shadow:var(--shadow-sm); transition:transform .3s, box-shadow .3s; font-family:var(--sans); display:flex; flex-direction:column; align-items:flex-start}
+.cat-card:hover{transform:translateY(-6px); box-shadow:var(--shadow)}
+.cat-card .cc-ic{width:58px; height:58px; border-radius:16px; background:var(--cc); display:flex; align-items:center; justify-content:center; margin-bottom:18px; box-shadow:0 10px 22px -10px var(--cc)}
+.cat-card .cc-ic svg{width:28px; height:28px; color:#fff}
+.cat-card h3{font-family:var(--display); font-weight:700; font-size:1.5rem; color:var(--cc); margin-bottom:6px}
+.cat-card > p{color:var(--ink-soft); font-size:.95rem; margin-bottom:18px}
+.cat-card .cc-go{margin-top:auto; font-weight:800; color:var(--cc); font-size:.9rem; display:flex; align-items:center; gap:7px; transition:gap .25s}
+.cat-card:hover .cc-go{gap:13px}
+.cat-card .cc-count{position:absolute; top:24px; right:24px; font-size:.76rem; font-weight:700; color:var(--ink-soft); background:var(--ivory); border:1px solid var(--line); padding:5px 11px; border-radius:100px}
+.fsoc{display:flex; gap:10px; margin-top:4px}
+.fsoc a{width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:#EBD49A; transition:all .2s}
+.fsoc a:hover{background:rgba(235,212,154,.16); transform:translateY(-2px)}
+.fsoc a svg{width:19px; height:19px}
 
 /* HERO / HEADER */
 .hero{position:relative; text-align:center; color:#fff; padding:64px 0 74px; overflow:hidden; background:radial-gradient(120% 120% at 50% -10%, var(--teal-2), var(--teal) 45%, var(--teal-deep) 100%)}
@@ -184,6 +216,7 @@ p{margin:0}
 @media(max-width:900px){
   .grid{grid-template-columns:repeat(2,1fr)}
   .ubi-grid{grid-template-columns:1fr; gap:34px}
+  .cb-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
   .section{padding:60px 0}
@@ -192,6 +225,8 @@ p{margin:0}
   .search{max-width:none}
   .topbar .tb-brand span{display:none}
   .wa-float{width:56px; height:56px}
+  .cb-grid{grid-template-columns:1fr; max-width:400px; margin:0 auto}
+  .cat-cards{grid-template-columns:1fr; max-width:400px; margin:0 auto}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important; transition:none!important}
@@ -223,10 +258,18 @@ p{margin:0}
       <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><rect x="24" y="37" width="52" height="47" rx="12" stroke="#1E5245" stroke-width="5"/><path d="M37 41v-6a13 13 0 0 1 26 0v6" stroke="#1E5245" stroke-width="5" stroke-linecap="round"/><path d="M50 52l2.6 5.4 5.9.9-4.3 4.1 1 5.8L50 71l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z" fill="#C08A2E"/></svg>
       <span>Maxi Compras</span>
     </a>
-    <a class="btn btn-wa" id="tbWa" href="#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
-      Pedir
-    </a>
+    <div class="tb-right">
+      <a class="tb-soc" href="https://www.instagram.com/maxicompras2000" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="tb-soc" href="https://www.facebook.com/profile.php?id=61592875237799" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.3C16.6 2.2 15.6 2.1 14.4 2.1c-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V12h2.7v9.9h3.5V12h2.6l.4-3.5H14z"/></svg>
+      </a>
+      <a class="btn btn-wa" id="tbWa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+        Pedir
+      </a>
+    </div>
   </div>
 </div>
 
@@ -252,6 +295,40 @@ p{margin:0}
   </div>
 </header>
 
+<!-- CATEGORÍAS -->
+<section class="section cats" id="categorias" style="padding-bottom:20px">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <p class="eyebrow center">Explora la tienda</p>
+      <h2>Compra por <span class="gold">categoría</span></h2>
+      <p class="sec-lead">Toca una categoría y ve directo a esos productos.</p>
+    </div>
+    <div class="cat-cards reveal">
+      <button class="cat-card" data-cat="inmunocal" style="--cc:#1E5245">
+        <span class="cc-count"></span>
+        <span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Immunocal</h3>
+        <p>Bienestar y suplementos</p>
+        <span class="cc-go">Ver productos <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </button>
+      <button class="cat-card" data-cat="yanbal" style="--cc:#33343A">
+        <span class="cc-count"></span>
+        <span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z"/><path d="M18 14l.9 2.1 2.1.9-2.1.9L18 20l-.9-2.1-2.1-.9 2.1-.9z"/></svg></span>
+        <h3>Yanbal</h3>
+        <p>Perfumes y cosmética</p>
+        <span class="cc-go">Ver productos <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </button>
+      <button class="cat-card" data-cat="palmaveral" style="--cc:#B4593B">
+        <span class="cc-count"></span>
+        <span class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8a7 7 0 0 1-10 10z"/><path d="M2 21c0-3 2-5 5-5"/></svg></span>
+        <h3>Palmaveral</h3>
+        <p>Coco artesanal de Manabí</p>
+        <span class="cc-go">Ver productos <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- PRODUCTOS -->
 <section class="section" id="productos">
   <div class="wrap">
@@ -272,6 +349,7 @@ p{margin:0}
         <button class="chip" data-cat="palmaveral">Palmaveral</button>
       </div>
     </div>
+    <div id="catIntro" class="cat-block"></div>
     <div class="grid" id="grid"></div>
   </div>
 </section>
@@ -310,6 +388,11 @@ p{margin:0}
           <span class="name">Maxi Compras</span>
         </div>
         <p>Tu tienda de confianza en Pedernales. Bienestar Immunocal, productos Yanbal, Palmaveral y más.</p>
+        <div class="fsoc">
+          <a href="https://www.instagram.com/maxicompras2000" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61592875237799" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.3C16.6 2.2 15.6 2.1 14.4 2.1c-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V12h2.7v9.9h3.5V12h2.6l.4-3.5H14z"/></svg></a>
+          <a href="#" class="wa-link" data-msg="Hola Maxi Compras 👋 Vi su catálogo y quiero hacer un pedido." aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
+        </div>
       </div>
       <div class="fcol">
         <h4>Contacto</h4>
@@ -456,6 +539,54 @@ function render(list){
 render(PRODUCTS);
 
 /* ====== FILTRO + BÚSQUEDA ====== */
+const IC={
+  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg>',
+  spark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z"/><path d="M18 14l.9 2.1 2.1.9-2.1.9L18 20l-.9-2.1-2.1-.9 2.1-.9z"/></svg>',
+  bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C7 17 3 13.5 3 9a4.5 4.5 0 0 1 9-1 4.5 4.5 0 0 1 9 1c0 4.5-4 8-9 12z"/></svg>',
+  bottle:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="8" height="13" rx="2"/><path d="M10 8V5h4v3"/><path d="M11 2h2v3h-2z"/></svg>',
+  drop:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 4.5 6 7.5 6 10.5a6 6 0 0 1-12 0C6 10.5 8.5 7.5 12 3z"/></svg>',
+  brush:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20s2-1 4-3l8-8-3-3-8 8c-2 2-3 4-3 4z"/><path d="M14 5l5 5"/></svg>',
+  sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>',
+  pot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h16v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M19 10h1a3 3 0 0 1 0 6h-1"/><path d="M8 6c0-1.5-1-1.5-1-3M12 6c0-1.5-1-1.5-1-3"/></svg>',
+  hair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21c0-7 3-12 8-12s8 5 8 12"/><path d="M12 9V4M9 6l3-2 3 2"/></svg>',
+  truck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4h14v11H1z"/><path d="M15 8h4l3 3v4h-7z"/><circle cx="5.5" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>'
+};
+const CAT_INTRO={
+  inmunocal:{eyebrow:"Bienestar Immunocal", title:'¿Qué es <span class="g">Immunocal</span>?',
+    sub:"Un suplemento a base de proteína aislada de suero de leche, reconocido por ayudar al cuerpo a producir glutatión — su antioxidante natural más importante.",
+    cards:[
+      {ic:"shield",t:"Defensas",d:"Apoya tu sistema inmune de forma natural, día a día."},
+      {ic:"spark",t:"Antioxidante",d:"Ayuda a producir glutatión, el antioxidante maestro del cuerpo."},
+      {ic:"bolt",t:"Energía",d:"Más vitalidad para tus actividades y tu rutina diaria."},
+      {ic:"heart",t:"Recuperación",d:"Ideal para deportistas y para tu bienestar general."}
+    ]},
+  yanbal:{eyebrow:"Belleza y cuidado", title:'Línea <span class="g">Yanbal</span>',
+    sub:"Perfumería y cosmética original: fragancias, cuidado de la piel, maquillaje y más para verte y sentirte bien todos los días.",
+    cards:[
+      {ic:"bottle",t:"Perfumes",d:"Fragancias originales para él y para ella."},
+      {ic:"drop",t:"Piel",d:"Cremas y cuidado facial y corporal."},
+      {ic:"brush",t:"Maquillaje",d:"Bases, color y más para lucir radiante."},
+      {ic:"heart",t:"Para la familia",d:"Desodorantes, colonias y cuidado diario."}
+    ]},
+  palmaveral:{eyebrow:"Coco artesanal de Manabí", title:'<span class="g">Palmaveral</span>, del cocotero a tu casa',
+    sub:"Aceite y leche de coco extra virgen, artesanales, de la costa de Pedernales. Puro y natural — un coco, mil usos.",
+    cards:[
+      {ic:"pot",t:"Cocina",d:"Aceite que resiste el calor; leche para curries y postres."},
+      {ic:"sun",t:"Piel",d:"Hidrata y nutre de forma natural, sin químicos."},
+      {ic:"hair",t:"Cabello",d:"Nutre de raíz a puntas y aporta brillo natural."},
+      {ic:"truck",t:"Al por mayor",d:"Caneca a granel para negocios y distribuidores."}
+    ]}
+};
+const catIntro=document.getElementById("catIntro");
+function updateCatIntro(){
+  const d=CAT_INTRO[activeCat];
+  if(!d){ catIntro.classList.remove("show"); catIntro.innerHTML=""; return; }
+  catIntro.innerHTML=`<div class="cb-head"><p class="cb-eyebrow">${d.eyebrow}</p>
+    <h3 class="cb-title">${d.title}</h3><p class="cb-sub">${d.sub}</p></div>
+    <div class="cb-grid">${d.cards.map(c=>`<div class="cb-card"><div class="cb-ic">${IC[c.ic]}</div><h4>${c.t}</h4><p>${c.d}</p></div>`).join("")}</div>`;
+  catIntro.classList.add("show");
+}
 let activeCat="todos";
 const searchInput=document.getElementById("search");
 function apply(){
@@ -465,6 +596,7 @@ function apply(){
     const text=`${p.name} ${p.desc} ${p.keywords}`.toLowerCase();
     return catOk && (!q||text.includes(q));
   });
+  updateCatIntro();
   render(f);
 }
 searchInput.addEventListener("input",apply);
@@ -480,6 +612,20 @@ document.querySelectorAll(".wa-link").forEach(a=>{
   a.setAttribute("target","_blank"); a.setAttribute("rel","noopener");
 });
 document.getElementById("tbWa").setAttribute("href",waLink("Hola Maxi Compras 👋 Vi su catálogo y quiero hacer un pedido."));
+
+/* ====== TARJETAS DE CATEGORÍA (entrada rápida) ====== */
+function goToCategory(cat){
+  const chip=[...document.querySelectorAll(".chip")].find(c=>c.dataset.cat===cat);
+  if(chip) chip.click();
+  const q=document.getElementById("search"); if(q){ q.value=""; }
+  document.getElementById("productos").scrollIntoView({behavior:"smooth"});
+}
+document.querySelectorAll(".cat-card").forEach(card=>{
+  const cat=card.dataset.cat;
+  const n=PRODUCTS.filter(p=>p.cat===cat && !p.soon).length;
+  const cnt=card.querySelector(".cc-count"); if(cnt) cnt.textContent=n+(n===1?" producto":" productos");
+  card.addEventListener("click",()=>goToCategory(cat));
+});
 
 /* ====== REVEAL + AÑO ====== */
 const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}})},{threshold:.14});
